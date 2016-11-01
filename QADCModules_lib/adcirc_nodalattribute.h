@@ -48,9 +48,6 @@ public:
     ///Value(s) for nodal parameter at this node
     QVector<qreal> values;
 
-    ///Metadata for nodal parameters
-    adcirc_nodalparameter *metadata;
-
 };
 
 #endif // ADCIRC_NODALATTRIBUTE_H

@@ -53,7 +53,6 @@ win32 {
 unix:!macx{
     isEmpty(NETCDFHOME){
         LIBS += -lnetcdf
-        INCLUDEPATH += /usr/include
     }else{
         LIBS += -L$$NETCDFHOME/lib -lnetcdf
         INCLUDEPATH += $$NETCDFHOME/include 
@@ -117,7 +116,7 @@ SOURCES_KDTREE2 = $$KDTREEPATH/kdtree2.cpp
 #...Shapelib Sources
 SOURCES_SHAPELIB = $$SHAPELIBPATH/shpopen.c $$SHAPELIBPATH/dbfopen.c $$SHAPELIBPATH/safileio.c $$SHAPELIBPATH/shptree.c
 
-INCLUDEPATH += include $$PROJPATH $$BOOSTPATH $$KDTREEPATH $$SHAPELIBPATH
+INCLUDEPATH += $$PROJPATH $$BOOSTPATH $$KDTREEPATH $$SHAPELIBPATH
 
 DEFINES += QADCMODULES_LIBRARY
 

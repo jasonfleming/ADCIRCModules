@@ -477,7 +477,6 @@ int adcirc_fort13::readNodalData(int nodalAttributeIndex, QByteArrayList &data)
             if(!err)
                 return ERROR_NODALPARAM_READERROR;
             this->nodalData[nodalAttributeIndex][index-1]->values[j] = tempDouble;
-            this->nodalData[nodalAttributeIndex][index-1]->metadata  = this->nodalParameters[nodalAttributeIndex];
         }
 
     }
@@ -506,11 +505,8 @@ int adcirc_fort13::mapNodalAttributesToMesh(adcirc_mesh *inputMesh)
         this->mesh = inputMesh;
 
     for(int i=0;i<this->mesh->numNodes;i++)
-    {
-        this->mesh->nodes[i]->nodalData.resize(this->numParameters);
-        for(int j=0;j<this->numParameters;j++)
-            this->mesh->nodes[i]->nodalData[j] = this->nodalData[j][i];
-    }
+        this->mesh->nodes[i]->nodalData = this->nodalData;
+
     return ERROR_NOERROR;
 }
 //-----------------------------------------------------------------------------------------//

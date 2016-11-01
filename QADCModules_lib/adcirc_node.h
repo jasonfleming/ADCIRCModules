@@ -78,11 +78,7 @@ public:
     QByteArray fullHash;
 
     ///Nodal Attribute data from a fort.13
-    QVector<adcirc_nodalattribute*> nodalData;
-
-    ///Nodal parameters for this node
-    //QVector<adcirc_nodalattribute*> nodalAttributes;
-
+    QVector<QVector<adcirc_nodalattribute*> > nodalData;
 
     //...PUBLIC FUNCTIONS...//
 
